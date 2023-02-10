@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.Random;
-public class Main {
+public class TwoRoundRunOffVoting {
     public static void main(String[] args) {
         Random random = new Random();
         Scanner input = new Scanner(System.in);
