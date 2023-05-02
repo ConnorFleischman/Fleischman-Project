@@ -7,7 +7,9 @@ import java.util.Random;
 public class TwoRoundRunOffVoting {
     /**
      * The main method gets the number of candidates, voters, and how many times to run the sim
-     * Then
+     * Then it gives a random number of votes (0, max voters) to each candidate.
+     * Once the winner and runner-up is determined it reruns the poll with only the two candidates
+     * This then determines the grand winner
      * @param args not used
      */
     public static void main(String[] args) {
