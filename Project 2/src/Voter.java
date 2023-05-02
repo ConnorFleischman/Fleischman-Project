@@ -1,6 +1,6 @@
 import java.util.Random;
 public class Voter {
-    public void Vote(VotingMachine votie) {
+    public void vote(VotingMachine votie) {
         Ballot ballie = votie.getBallot();
         int numberCandidates = ballie.countCandidates();
         Random randie = new Random();

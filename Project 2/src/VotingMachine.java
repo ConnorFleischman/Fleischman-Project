@@ -1,10 +1,12 @@
-public class VotingMachine {
-    private void configure(int numberCandidates) {
-        // create and store empty ballot for number of candidates
-        //      serves as a template for voter
-        // assign voteCounts a new empty array that matches the num candates on ballot
-    }
 
+public class VotingMachine {
+    private Ballot configuredBallot;
+    private int[] voteCounts;
+
+    public void configure(int numberCandidates) {
+        Ballot emptyBallot = new Ballot(numberCandidates);
+        voteCounts = new int[numberCandidates];
+    }
 
     public boolean cast(Ballot ballot) {
         int voteChoice;
@@ -13,22 +15,28 @@ public class VotingMachine {
             if (ballot.getMark(i) && !votePresent) {
                 voteChoice = i;
                 votePresent = true;
-                } else if (ballot.getMark(i) && votePresent) {
+                configure(voteChoice);
+            } else if (ballot.getMark(i) && votePresent) {
                 return false;
             }
         }
         return votePresent;
-
     }
     public void reset() {
-        // set all vote counts = 0
+        configure(0);
     }
     public int determineWinner() {
-        // find index of max vote count
-        // return this as vote winner
-        return 0;
+        int mostVoted = 0;
+        int mostVotedIndex = 0;
+        for (int x = 0; x < voteCounts.length; x++) {
+            if (voteCounts[x] > mostVoted) {
+                mostVoted = voteCounts[x];
+                mostVotedIndex = x;
+            }
+        }
+        return mostVotedIndex;
     }
     public Ballot getBallot() {
-        return null;
+        return configuredBallot;
     }
 }

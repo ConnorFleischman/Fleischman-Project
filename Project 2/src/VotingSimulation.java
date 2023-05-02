@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class VotingSimulation {
     /**
-     * Outlines the users choices and begins the simulation loop.
+     * Outlines the users choices and begins the simulation loop
      */
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
@@ -16,7 +16,7 @@ public class VotingSimulation {
         simulation(numberCandidates, userNumberVoters, numberSimulations);
     }
     /**
-     * Loops the two-round runoff voting for the number of simulations.
+     * Loops the two-round runoff voting for the number of simulations
      * @param numberCandidates - the user specified number of candidates
      * @param userNumberVoters - the user specified number of voters
      * @param numberSimulations - the user specified number of simulations
@@ -33,10 +33,10 @@ public class VotingSimulation {
         }
     }
     /**
-     * Generates votes for each candidate.
-     * The two highest voted move on to second round.
-     * Generates votes for the two candidates.
-     * Returns the winner.
+     * Generates votes for each candidate
+     * The two highest voted move on to second round
+     * Generates votes for the two candidates
+     * Returns the winner
      * @param numberCandidates - the user specified number of candidates
      * @param userNumberVoters - the user specified number of voters
      */
