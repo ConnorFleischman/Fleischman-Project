@@ -4,26 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b664f09e-688f-40bf-a8af-1cf9808e5d1a" name="Changes" comment="" />
+    <list default="true" id="a0ace25e-5b5b-4398-ba14-afc3dc7ccc47" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2N3E6zbSqm5JuqDjkzbKyRxV8g0" />
+  <component name="ProjectId" id="2NOaeKyvihlVGVp9P25pcDCPmmL" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,26 +25,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/conno/OneDrive/Documents/GitHub/CMPT-220/Source Code",
-    "project.structure.last.edited": "Project",
+    "last_opened_file_path": "C:/Users/conno/OneDrive/Documents/GitHub/Fleischman-Labs/Lab5/src",
+    "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b664f09e-688f-40bf-a8af-1cf9808e5d1a" name="Changes" comment="" />
-      <created>1678884193250</created>
+      <changelist id="a0ace25e-5b5b-4398-ba14-afc3dc7ccc47" name="Changes" comment="" />
+      <created>1679537676148</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1678884193250</updated>
+      <updated>1679537676148</updated>
     </task>
     <servers />
   </component>
