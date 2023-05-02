@@ -1,6 +1,15 @@
 import java.util.Scanner;
 import java.util.Random;
+
+/**
+ * A two-round run-off voting simulation
+ */
 public class TwoRoundRunOffVoting {
+    /**
+     * The main method gets the number of candidates, voters, and how many times to run the sim
+     * Then
+     * @param args not used
+     */
     public static void main(String[] args) {
         Random random = new Random();
         Scanner input = new Scanner(System.in);
