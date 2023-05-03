@@ -27,10 +27,13 @@ public class VotingSimulation1 {
         VotingMachine votie = new VotingMachine();
         votie.configure(numberCandidates);
         Voter voter = new Voter();
-        Ballot ballot = new Ballot(numberCandidates);
-        voter.vote(votie);
-//        simulation(userNumberVoters, numberSimulations);
-
+        for (int x = 0; x < numberSimulations; x++){
+            for (int i = 0; i < userNumberVoters; i++) {
+                voter.vote(votie);
+            }
+            System.out.println(votie.determineWinner());
+            System.out.print(votie.printNumVotedForWinner());
+        }
     }
 }
 

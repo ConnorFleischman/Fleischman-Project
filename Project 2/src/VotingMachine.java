@@ -4,18 +4,16 @@ public class VotingMachine {
     private int[] voteCounts;
 
     public void configure(int numberCandidates) {
-        Ballot emptyBallot = new Ballot(numberCandidates);
+        configuredBallot = new Ballot(numberCandidates);
         voteCounts = new int[numberCandidates];
     }
 
     public boolean cast(Ballot ballot) {
-        int voteChoice;
         boolean votePresent = false;
         for (int i = 0; i < ballot.countCandidates(); i++) {
             if (ballot.getMark(i) && !votePresent) {
-                voteChoice = i;
                 votePresent = true;
-                configure(voteChoice);
+                voteCounts[i]++;
             } else if (ballot.getMark(i) && votePresent) {
                 return false;
             }
@@ -39,4 +37,8 @@ public class VotingMachine {
     public Ballot getBallot() {
         return configuredBallot;
     }
+    public int printNumVotedForWinner() {
+        return voteCounts[determineWinner()];
+    }
 }
+

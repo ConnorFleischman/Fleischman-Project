@@ -1,5 +1,5 @@
 public class Ballot {
-    private final boolean[] candidates;
+    private boolean[] candidates;
 
     public Ballot(int numberCandidates){
         candidates = new boolean[numberCandidates];
