@@ -1,15 +1,13 @@
 public interface VoterInterface {
     void RandomVoter(VotingMachine votie);
 
-    void RandomVoter();
+    void LoyalVoter(VotingMachine votie, int preferedCandidate);
 
-    void LoyalVoter();
+    void OddVoter(VotingMachine votie);
 
-    void OddVoter();
+    void EvenVoter(VotingMachine votie);
 
-    void EvenVoter();
+    void DoubleVoter(VotingMachine votie);
 
-    void DoubleVoter();
-
-    void FirstVoter();
+    void FirstVoter(VotingMachine votie);
 }
