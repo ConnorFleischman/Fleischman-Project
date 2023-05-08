@@ -4,8 +4,9 @@ public class Voter {
         Ballot ballie = votie.getBallot();
         int numberCandidates = ballie.countCandidates();
         Random randie = new Random();
-        int voteChoice = randie.nextInt(0, numberCandidates);
+        int voteChoice = randie.nextInt(numberCandidates);
         ballie.mark(voteChoice);
+        System.out.println("I voted for: " + voteChoice);
         votie.cast(ballie);
     }
 }
