@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class VotingSimulation extends Voter implements VoterInterface{
 
     /**
