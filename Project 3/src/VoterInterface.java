@@ -7,7 +7,7 @@ public interface VoterInterface {
 
     void EvenVoter(VotingMachine votie);
 
-    void DoubleVoter(VotingMachine votie);
+    boolean DoubleVoter(VotingMachine votie);
 
     void FirstVoter(VotingMachine votie);
 }

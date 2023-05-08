@@ -56,7 +56,7 @@ public class Voter implements VoterInterface {
         }
     }
     @Override
-    public void DoubleVoter(VotingMachine votie) {
+    public boolean DoubleVoter(VotingMachine votie) {
         // DoubleVoter - this kind of voter casts their vote for two randomly chosen candidates
         Ballot ballie = votie.getBallot();
         int numberCandidates = ballie.countCandidates();
@@ -67,9 +67,8 @@ public class Voter implements VoterInterface {
             if (voteChoice1 != voteChoice2) {
                 ballie.mark(voteChoice1);
                 ballie.mark(voteChoice2);
-                System.out.println("I'm a DoubleVoter and I voted for: " + voteChoice1 + "and " + voteChoice2);
-                votie.cast(ballie);
-                break;
+                System.out.println("I'm a DoubleVoter and I voted for: " + voteChoice1 + " and " + voteChoice2);
+                return votie.cast(ballie);
             } else {
                 voteChoice2 = randie.nextInt(numberCandidates);
             }
