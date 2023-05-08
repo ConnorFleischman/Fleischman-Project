@@ -1,17 +1,5 @@
 import java.util.Scanner;
-
-//VotingSimulation.java contains the VotingSimulation class (this holds your main method and your other static methods)
-//        Your main method should contain the primary loop of the program and should instantiate classes and call their methods as needed.
-//        You should be able to reuse some of your earlier static methods, such as the one that reads the user input.
-//        Include Javadoc comments explaining the purpose of each class and method.
-//        Tasks (or subtasks) that need to be done...
-//        read user input into appropriate variables (this should already be done from Project 1 and should now have to change)
-//        simulate the two-round vote procedure in a loop as many times as needed
-//        after a first round vote, you'll need to determine whether a second round is needed
-//        if so, then it works just like the first round except that only the top two candidates are involved (but use the same number of total voters)
-//        to simulate a single vote, replace your previous logic with an implementation of the procedure described in the attached design diagram
-//        report the results to the user in neat and easy to read form (this code should also not need to change much from the Project 1 version)
-public class VotingSimulation {
+public class VotingSimulation extends Voter implements VoterInterface{
 
     /**
      * Outlines the users choices and begins the simulation loop
@@ -23,14 +11,41 @@ public class VotingSimulation {
         for (int x = 0; x < numberSimulations; x++) {
             System.out.print("Input the number of candidates: ");
             int numberCandidates = input.nextInt();
-            System.out.print("Input the number of voters: ");
-            int userNumberVoters = input.nextInt();
+            System.out.print("Input the number of random voters: ");
+            int numRandomVoters = input.nextInt();
+            System.out.print("Input the number of loyal voters: ");
+            int numLoyalVoters = input.nextInt();
+            System.out.print("Input who the index of the candidate which the loyal voters will vote for: ");
+            int loyalCandidate = input.nextInt();
+            System.out.print("Input the number of odd voters: ");
+            int numOddVoters = input.nextInt();
+            System.out.print("Input the number of even voters: ");
+            int numEvenVoters = input.nextInt();
+            System.out.print("Input the number of double voters: ");
+            int numDoubleVoters = input.nextInt();
+            System.out.print("Input the number of first candidate voters: ");
+            int numFirstVoters = input.nextInt();
+            int userNumberVoters = numRandomVoters + numLoyalVoters + numOddVoters + numEvenVoters + numDoubleVoters + numFirstVoters;
+            System.out.println("You have selected " + userNumberVoters + " voters");
             VotingMachine votie = new VotingMachine();
             votie.configure(numberCandidates);
             Voter voter = new Voter();
             for (int i = 0; i < userNumberVoters; i++) {
-                voter.vote(votie);
+                if (i < numRandomVoters) {
+                    voter.RandomVoter(votie);
+                } else if (i < (numLoyalVoters + i)) {
+                    voter.LoyalVoter(votie, loyalCandidate);
+                } else if (i < (numOddVoters + i)) {
+                    voter.OddVoter(votie);
+                } else if (i < (numEvenVoters + i)) {
+                    voter.EvenVoter(votie);
+                } else if (i < (numDoubleVoters + i)) {
+                    voter.DoubleVoter(votie);
+                } else if ((i < numFirstVoters + i)) {
+                    voter.FirstVoter(votie);
+                }
             }
+
             System.out.println("-------------------");
             System.out.println("The winner is: " + votie.determineWinner("first"));
             System.out.println("The runner up is: " + votie.determineWinner("second"));

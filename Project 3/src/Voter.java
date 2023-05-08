@@ -7,7 +7,7 @@ public class Voter implements VoterInterface {
         Random randie = new Random();
         int voteChoice = randie.nextInt(numberCandidates);
         ballie.mark(voteChoice);
-        System.out.println("I voted for: " + voteChoice);
+        System.out.println("I'm a RandomVoter and I voted for: " + voteChoice);
         votie.cast(ballie);
     }
     @Override
@@ -16,11 +16,11 @@ public class Voter implements VoterInterface {
         vote(votie);
     }
     @Override
-    public void LoyalVoter(VotingMachine votie, int preferedCandidate) {
+    public void LoyalVoter(VotingMachine votie, int preferredCandidate) {
         // LoyalVoter - this kind of voter always votes for the candidate with a specific integer index (this is specified via the constructor)
         Ballot ballie = votie.getBallot();
-        ballie.mark(preferedCandidate);
-        System.out.println("I voted for: " + preferedCandidate);
+        ballie.mark(preferredCandidate);
+        System.out.println("I'm a LoyalVoter and I voted for: " + preferredCandidate);
         votie.cast(ballie);
     }
     @Override
@@ -29,14 +29,31 @@ public class Voter implements VoterInterface {
         Ballot ballie = votie.getBallot();
         Random randie = new Random();
         int numberCandidates = ballie.countCandidates();
-        int voteChoice = randie.nextInt(numberCandidates);
-        if (voteChoice % 2 == 1) {
-
+        while (true) {
+            int voteChoice = randie.nextInt(numberCandidates);
+            if (voteChoice % 2 == 1) {
+                ballie.mark(voteChoice);
+                System.out.println("I'm an OddVoter and I voted for: " + voteChoice);
+                votie.cast(ballie);
+                break;
+            }
         }
     }
     @Override
     public void EvenVoter(VotingMachine votie) {
         // EvenVoter - this kind of voter casts their vote randomly among the even-indexed candidates only
+        Ballot ballie = votie.getBallot();
+        Random randie = new Random();
+        int numberCandidates = ballie.countCandidates();
+        while (true) {
+            int voteChoice = randie.nextInt(numberCandidates);
+            if (voteChoice % 2 == 0) {
+                ballie.mark(voteChoice);
+                System.out.println("I'm an EvenVoter and I voted for: " + voteChoice);
+                votie.cast(ballie);
+                break;
+            }
+        }
     }
     @Override
     public void DoubleVoter(VotingMachine votie) {
@@ -50,7 +67,7 @@ public class Voter implements VoterInterface {
             if (voteChoice1 != voteChoice2) {
                 ballie.mark(voteChoice1);
                 ballie.mark(voteChoice2);
-                System.out.println("I voted for: " + voteChoice1 + "and " + voteChoice2);
+                System.out.println("I'm a DoubleVoter and I voted for: " + voteChoice1 + "and " + voteChoice2);
                 votie.cast(ballie);
                 break;
             } else {
@@ -64,7 +81,7 @@ public class Voter implements VoterInterface {
         // FirstVoter - this kind of voter casts their vote for the candidate at index slot 0
         Ballot ballie = votie.getBallot();
         ballie.mark(0);
-        System.out.println("I voted for: " + 0);
+        System.out.println("I'm a FirstVoter and I voted for: " + 0);
         votie.cast(ballie);
 
     }
