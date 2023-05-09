@@ -6,8 +6,7 @@ public class Voter implements VoterInterface {
         int numberCandidates = ballie.countCandidates();
         Random randie = new Random();
         int voteChoice = randie.nextInt(numberCandidates);
-        int probabilityWeight = randie.nextInt(101);
-        if (probabilityWeight > 10) {
+        if (randie.nextFloat(101) > 10) {
             ballie.markCandidates(voteChoice, 2);
         } else {
             ballie.markCandidates(voteChoice, randie.nextInt(2));
