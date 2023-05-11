@@ -46,12 +46,24 @@ public class VotingSimulation extends Voter implements VoterInterface{
             for (int i = 0; i < userNumberVoters; i++) {
                 if (i < numRandomVoters) {
                     voter.RandomVoter(votie);
+                    if (!voter.RandomVoter(votie)) {
+                        numDiscardedVotes++;
+                    }
                 } else if (i < numLoyalVoters) {
                     voter.LoyalVoter(votie, loyalCandidate);
+                    if (!voter.LoyalVoter(votie, loyalCandidate)) {
+                        numDiscardedVotes++;
+                    }
                 } else if (i < numOddVoters) {
                     voter.OddVoter(votie);
+                    if (!voter.OddVoter(votie)) {
+                        numDiscardedVotes++;
+                    }
                 } else if (i < numEvenVoters) {
                     voter.EvenVoter(votie);
+                    if (!voter.EvenVoter(votie)) {
+                        numDiscardedVotes++;
+                    }
                 } else if (i < numDoubleVoters) {
                     boolean result = voter.DoubleVoter(votie);
                     if (result) {
@@ -62,6 +74,9 @@ public class VotingSimulation extends Voter implements VoterInterface{
                     }
                 } else if (i < numFirstVoters) {
                     voter.FirstVoter(votie);
+                    if (!voter.FirstVoter(votie)) {
+                        numDiscardedVotes++;
+                    }
                 }
             }
 

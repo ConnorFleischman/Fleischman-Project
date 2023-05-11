@@ -10,19 +10,22 @@ public class VotingMachine {
     }
 
     public boolean cast(Ballot ballot) {
-        int votedCandidate = 0;
-        boolean votePresent = false;
+        int votesPresent = 0;
+        boolean voteCast = false;
         for (int i = 0; i < ballot.countCandidates(); i++) {
-            if (ballot.getMark(i) && !votePresent) {
-                votePresent = true;
-                voteCounts[i]++;
-                votedCandidate = i;
-            } else if (ballot.getMark(i) && votePresent) {
-                votePresent = false;
-                voteCounts[votedCandidate]--;
+            if (ballot.getMark(i)) {
+                votesPresent++;
             }
         }
-        return votePresent;
+        for (int x = 0; x < ballot.countCandidates(); x++) {
+            if (votesPresent == 1) {
+                voteCounts[x]++;
+                voteCast = true;
+            } else {
+                break;
+            }
+        }
+        return voteCast;
     }
     public void reset() {
         configure(0);
