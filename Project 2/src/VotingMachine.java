@@ -53,7 +53,7 @@ public class VotingMachine {
     }
 
     /**
-     *
+     *Determines the candidate who places 'place' (first or second)
      * @param place - input "first" or "second" for the first and second place respectively
      * @return - returns the specified placeholder
      */

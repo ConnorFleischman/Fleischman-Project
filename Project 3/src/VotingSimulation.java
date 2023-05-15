@@ -1,10 +1,16 @@
 import java.util.Scanner;
 
+/**
+ * Runs the program
+ */
+
 public class VotingSimulation extends Voter implements VoterInterface{
 
     /**
-     * Outlines the users choices and begins the simulation loop
+     * Contains all the inputs and outputs for the program as well as the loops for the votes and for the simulations
+     * @param args - unused
      */
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Input the number of times to run the simulation: ");
