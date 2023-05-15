@@ -1,6 +1,14 @@
 import java.util.Random;
-
+/**
+ * This hold the voting methods which create new ballots and mark candidates
+ */
 public class Voter implements VoterInterface {
+
+    /**
+     * This allows the program to mark the ballot as True at a random position
+     * @param votie - an instance of the voting machine class
+     */
+
     public boolean vote(VotingMachine votie) {
         boolean markCandidate;
         Ballot ballie = votie.getBallot();
@@ -17,14 +25,25 @@ public class Voter implements VoterInterface {
         votie.cast(ballie);
         return markCandidate;
     }
+
+    /**
+     * Randomly votes for a candidate using the default voting method (vote)
+     * @param votie - an instance of the voting machine class
+     */
+
     @Override
     public boolean RandomVoter(VotingMachine votie) {
-        // RandomVoter - this kind of voter just uses the default implementation and votes randomly as before
         return vote(votie);
     }
+
+    /**
+     * Votes for the users preferred candidate
+     * @param votie - an instance of the voting machine class
+     * @param preferredCandidate - the user specified preferred candidate
+     */
+
     @Override
     public boolean LoyalVoter(VotingMachine votie, int preferredCandidate) {
-        // LoyalVoter - this kind of voter always votes for the candidate with a specific integer index (this is specified via the constructor)
         Ballot ballie = votie.getBallot();
         Random randie = new Random();
         boolean markCandidate = ballie.markCandidates(preferredCandidate, randie.nextInt(3));
@@ -32,9 +51,14 @@ public class Voter implements VoterInterface {
         votie.cast(ballie);
         return markCandidate;
     }
+
+    /**
+     * Randomly votes for any candidate with an odd index
+     * @param votie - an instance of the voting machine class
+     */
+
     @Override
     public boolean OddVoter(VotingMachine votie) {
-        // OddVoter - this kind of voter casts their vote randomly among the odd-indexed candidates only
         boolean markCandidate;
         Ballot ballie = votie.getBallot();
         Random randie = new Random();
@@ -50,9 +74,14 @@ public class Voter implements VoterInterface {
         }
         return markCandidate;
     }
+
+    /**
+     * Randomly votes for any candidate with an even index
+     * @param votie - an instance of the voting machine class
+     */
+
     @Override
     public boolean EvenVoter(VotingMachine votie) {
-        // EvenVoter - this kind of voter casts their vote randomly among the even-indexed candidates only
         boolean markCandidate;
         Ballot ballie = votie.getBallot();
         Random randie = new Random();
@@ -68,9 +97,15 @@ public class Voter implements VoterInterface {
         }
         return markCandidate;
     }
+
+    /**
+     * Randomly votes for any two candidates
+     * @param votie - an instance of the voting machine class
+     * @return - returns if the vote was cast (True) or not (False)
+     */
+
     @Override
     public boolean DoubleVoter(VotingMachine votie) {
-        // DoubleVoter - this kind of voter casts their vote for two randomly chosen candidates
         boolean markCandidate1;
         boolean markCandidate2;
         Ballot ballie = votie.getBallot();
@@ -95,9 +130,14 @@ public class Voter implements VoterInterface {
             }
         }
     }
+
+    /**
+     * Votes for the candidate at index 0
+     * @param votie - an instance of the voting machine class
+     */
+
     @Override
     public boolean FirstVoter(VotingMachine votie) {
-        // FirstVoter - this kind of voter casts their vote for the candidate at index slot 0
         boolean markCandidate;
         Ballot ballie = votie.getBallot();
         Random randie = new Random();
